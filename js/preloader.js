@@ -1,0 +1,27 @@
+// Hide Sections
+$('.section').hide();
+
+setTimeout(function () {
+    $(document).ready(function () {
+        // Show sections
+        $('.section').fadeIn();
+
+        // Hide preloader
+        $('.loader').fadeOut();
+
+
+        // Counter
+        $('.count').each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 1000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+
+    });
+}, 1000);
